@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ArticleActivity">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/recyclerView"
+        android:background="@android:color/darker_gray" />
+
+
+    <TextView
+        android:paddingTop="2dp"
+        android:id="@+id/title_textView"
+        android:textColor="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/recyclerView"
+        android:gravity="center"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="58dp" />
+
+    <TextView
+        android:id="@+id/desc_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/title_textView"
+        android:gravity="center"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="169dp" />
+
+    <ImageButton
+        android:id="@+id/notifyFriend"
+        android:layout_width="104dp"
+        android:layout_height="46dp"
+        android:layout_below="@+id/notify_textView"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/baseline_message_black_24" />
+
+    <TextView
+        android:id="@+id/notify_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/desc_textView"
+        android:layout_centerInParent="true"
+        android:text="@string/notify_friend" />
+
+</RelativeLayout>

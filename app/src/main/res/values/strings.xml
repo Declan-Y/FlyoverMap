@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Flyover Map</string>
+    <string name = "notify_friend">Notify a friend!</string>
+</resources>
