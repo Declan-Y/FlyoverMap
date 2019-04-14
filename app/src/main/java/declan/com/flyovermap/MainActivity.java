@@ -58,7 +58,7 @@ private AsyncTask flyoverDataAsyncTask;
         setContentView(R.layout.activity_main);
 
 
-         flyoverDataAsyncTask = new GrabFlightData().execute();
+         flyoverDataAsyncTask = new GrabFlightData().execute(); //grab the data for flyovers on a different thread to not block UI
          mapFragment = (SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map);
 
     }
@@ -66,7 +66,7 @@ private AsyncTask flyoverDataAsyncTask;
     @Override
     public void onMapReady(GoogleMap googleMap) {
         LatLng alice = new LatLng(-23.6980, 133.8807);
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(alice, 3.5f));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(alice, 3.5f)); //centers the map on Australia on start up
         googleMap.setOnMarkerClickListener(m -> {
             List<Article> articles = placedMarkers.get(m.getPosition());
             Log.d(TAG, "MainActivity"+articles.size());
@@ -114,6 +114,8 @@ private AsyncTask flyoverDataAsyncTask;
     }
 
         private void readCityData(){
+
+        //reads in a list of cities from a CSV file
             InputStream is = getResources().openRawResource(R.raw.au);
             BufferedReader reader = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
             String line;

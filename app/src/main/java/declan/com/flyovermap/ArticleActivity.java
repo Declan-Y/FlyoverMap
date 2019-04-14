@@ -40,6 +40,8 @@ public class ArticleActivity extends AppCompatActivity {
         int i = 0;
         String title = null;
         String description = null;
+
+        //pass in values from the map activity
         while(i < values.size() - 1){
 
             if(i%2 ==0) {
@@ -85,6 +87,7 @@ public class ArticleActivity extends AppCompatActivity {
 
 
     }
+    //just recycler view things
     private class ViewHolder extends RecyclerView.ViewHolder{
         public TextView titleTextView;
         private Article mArticle;

@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FlightData {
+
+    //Parse XML from the RAAF RSS feed
     public static final String TAG = FlightData.class.getSimpleName();
-    public static final String SKIP_THIS_PHRASE = "RAAF Flying Activities";
+    public static final String SKIP_THIS_PHRASE = "RAAF Flying Activities"; //kind of hack workaround to avoid unwanted info at start of feed
     public List<Article> parse(InputStream in) throws XmlPullParserException, IOException {
         String title = null;
 
